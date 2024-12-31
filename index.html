@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="index.html" class="logo"><i class="fas fa-chart-line"></i>Finance Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto" id="navbaritems">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tracker">Use Tracker</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how-it-works">How it Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+                </ul>
+                <div class="navbar-buttons">
+                    <a href="login_screen.html" class="btn btn-outline-light me-2">
+                        <i class="fas fa-sign-in-alt"></i> Log In
+                    </a>
+                    <a href="sign_up.html" class="btn btn-outline-light">
+                        <i class="fas fa-user-plus"></i> Sign Up
+                    </a>
+                </div>
+                <div class="dropdown ms-auto dropdown-buttons d-none">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i> Account
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                        <li>
+                            <a class="dropdown-item" href="login_screen.html">
+                                <i class="fas fa-sign-in-alt"></i> Log In
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="sign_up.html">
+                                <i class="fas fa-user-plus"></i> Sign Up
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-box" class="container-fluid">
+        <div class="main-landing">
+            <div class="content">
+                <h1 class="under-welcome-h1">Take Control of Your Finances</h1>
+                <div class="under-h1"></div>
+                <p class="under-welcome-p">
+                    Track your income and expenses effortlessly. Manage your budget, set
+                    financial goals, and make smarter decisions for more secure future.
+                </p>
+                <button class="under-welcome-btn"><a href="sign_up.html"
+                        style="text-decoration: none; color: white;">Sign Up</a></button>
+            </div>
+            <div class="under-welcome-image">
+                <img src="makeme.png" alt="Power Finance" />
+            </div>
+        </div>
+    </section>
+    <div id="tracker" class="arrow">
+        <a href="#tracker " class="scroll-link">
+            <!-- <span></span> -->
+            <!-- <span></span> -->
+            <span></span>
+        </a>
+    </div>
+
+    <section id="use-tracker" class="container mt-4">
+        <br>
+        <br>
+        <h2 class="text-center">Access Your Personal Finance Tracker</h2>
+        <div class="card p-4 my-4">
+            <h3 class="text-center text-white bg-primary p-2 rounded" id="current-balance-box">Current Balance:
+                &#8377;0.00</h3>
+            <div class="row">
+                <div class="col-md-3 col-6">
+                    <label for="currency" class="form-label">Select Currency:</label>
+                    <select id="currency" class="form-select">
+                        <option>INR</option>
+                        <option>USD</option>
+                        <option>EUR</option>
+                    </select>
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="date" class="form-label">Choose Date:</label>
+                    <input type="date" id="date" class="form-control">
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="description" class="form-label">Description:</label>
+                    <input type="text" id="description" class="form-control" placeholder="Description">
+                </div>
+                <div class="col-md-3 col-6">
+                    <label for="amount" class="form-label">Amount:</label>
+                    <input type="number" id="amount" class="form-control" placeholder="Amount">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-6 col-12">
+                    <label for="type" class="form-label">Type:</label>
+                    <select id="type" class="form-select">
+                        <option>Income</option>
+                        <option>Expense</option>
+                    </select>
+                </div>
+                <div class="col-md-6 col-12 text-end mt-4">
+                    <button class="btn btn-success" id="add-transaction">Add Transaction</button>
+                    <button class="btn btn-info text-white" id="export-transactions">Export</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <section>
+        <div id="how-it-works" class="container mt-5 mb-5 rounded">
+            <h2 class="text-center">How it Works</h2>
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-3">
+                        <i class="fas fa-user-plus text-warning"></i>
+                        <h4>Create an Account</h4>
+                        <p>Sign up with your email to access your personalized dashboard and start your journey to
+                            better financial management.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i class="fas fa-cogs text-info"></i>
+                        <h4>Customize Currencies</h4>
+                        <p>Personalize your finance tracker to match your preferred currencies, exchange rates, and
+                            budgeting goals.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i class="fas fa-lock text-info"></i>
+                        <h4>Secure Data Protection</h4>
+                        <p>Keep your financial data safe with advanced encryption and secure cloud storage for easy
+                            access across all devices.</p>
+                    </div>
+                    <div class="col-md-3">
+                        <i class="fas fa-edit text-success"></i>
+                        <h4>Edit and Ease</h4>
+                        <p>Easily edit and manage your finances with a user-friendly interface, giving you full control
+                            over your records at all times.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-warning">Get Started Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-center text-white py-4">
+        <div class="container">
+            <p class="mb-3">&copy; 2024 Finance Tracker | All Rights Reserved</p>
+            <div class="social-icons d-flex justify-content-center">
+                <a href="#" class="text-white mx-3" aria-label="Instagram">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="#" class="text-white mx-3" aria-label="Facebook">
+                    <i class="fab fa-facebook-f fa-2x"></i>
+                </a>
+                <a href="#" class="text-white mx-3" aria-label="GitHub">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="#" class="text-white mx-3" aria-label="Google">
+                    <i class="fab fa-google fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/vfs_fonts.js"></script>
+    <script>
+        $(document).ready(function () {
+            const $transactionTable = $("table tbody");
+            let transactions = [];
+            let editedTransaction = null;
+            let currencySymbol = "₹";
+            const currencyMap = {
+                INR: "₹",
+                USD: "$",
+                EUR: "€"
+            };
+
+            $("#currency").on("change", function () {
+                currencySymbol = currencyMap[$(this).val()] || "₹";
+                updateBalance();
+                updateTransactionTable();
+            });
+
+            function updateBalance() {
+                const balance = transactions.reduce((acc, transaction) => {
+                    return transaction.type === "Income" ? acc + transaction.amount : acc - transaction.amount;
+                }, 0);
+                $("#current-balance-box").html(`Current Balance: ${currencySymbol}${balance.toFixed(2)}`);
+            }
+
+            function updateTransactionTable() {
+                $transactionTable.empty();
+                transactions.forEach((transaction, index) => {
+                    const row = `
+                        <tr data-index="${index}">
+                            <td>${transaction.date}</td>
+                            <td>${transaction.description}</td>
+                            <td>${currencySymbol}${transaction.amount.toFixed(2)}</td>
+                            <td>${transaction.type}</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm edit-btn">Edit</button>
+                                <button class="btn btn-danger btn-sm delete-btn">Delete</button>
+                                <button class="btn btn-success btn-sm save-btn d-none">Save</button>
+                            </td>
+                        </tr>`;
+                    $transactionTable.append(row);
+                });
+            }
+
+            function addTransaction() {
+                const date = $("#date").val();
+                const description = $("#description").val();
+                const amount = parseFloat($("#amount").val());
+                const type = $("#type").val();
+
+                if (!date || !description || isNaN(amount)) {
+                    alert("All fields are required!");
+                    return;
+                }
+
+                const transaction = { date, description, amount, type };
+
+                if (editedTransaction !== null) {
+                    transactions[editedTransaction] = transaction;
+                    editedTransaction = null;
+                } else {
+                    transactions.push(transaction);
+                }
+
+                updateTransactionTable();
+                updateBalance();
+
+                $("#date").val("");
+                $("#description").val("");
+                $("#amount").val("");
+                $("#type").val("Income");
+            }
+
+            $("#add-transaction").on("click", addTransaction);
+
+            $transactionTable.on("click", ".edit-btn", function () {
+                const $row = $(this).closest("tr");
+                const index = $row.data("index");
+                const transaction = transactions[index];
+
+                $("#date").val(transaction.date);
+                $("#description").val(transaction.description);
+                $("#amount").val(transaction.amount);
+                $("#type").val(transaction.type);
+
+                editedTransaction = index;
+                $row.find(".save-btn").removeClass("d-none");
+                $(this).addClass("d-none");
+            });
+
+            $transactionTable.on("click", ".save-btn", function () {
+                addTransaction();
+                updateTransactionTable();
+                updateBalance();
+            });
+
+            $transactionTable.on("click", ".delete-btn", function () {
+                const index = $(this).closest("tr").data("index");
+                transactions.splice(index, 1);
+                updateTransactionTable();
+                updateBalance();
+            });
+
+            $("#export-transactions").on("click", function () {
+                const rows = transactions.map(transaction => [
+                    transaction.date, transaction.description, `${currencySymbol}${transaction.amount.toFixed(2)}`, transaction.type
+                ]);
+
+                const docDefinition = {
+                    content: [
+                        { text: 'Transaction Report', style: 'header' },
+                        {
+                            table: {
+                                headerRows: 1,
+                                widths: ['*', '*', '*', '*'],
+                                body: [
+                                    ['Date', 'Description', 'Amount', 'Type'],
+                                    ...rows
+                                ]
+                            }
+                        }
+                    ]
+                };
+
+                pdfMake.createPdf(docDefinition).download('transactions.pdf');
+            });
+        });
+    </script>
+</body>
+
+</html>

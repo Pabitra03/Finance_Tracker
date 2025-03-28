@@ -8,7 +8,7 @@ Finance Tracker is a user-friendly web application designed to help you manage a
  - BOOTSTRAP
    
 ## Link 🔗
- - visit the site <a href="https://fin-track24.netlify.app/" target="_blank">Finance Tracker</a>
+ - visit the site <a href="https://finance-tracker12378.netlify.app/" target="_blank">Finance Tracker</a>
 
  ## Screensorts 📷
 
